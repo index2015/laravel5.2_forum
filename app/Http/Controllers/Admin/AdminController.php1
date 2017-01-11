@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Http\Controllers\System;
+
+use App\Admin;
+use App\User;
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+
+class AdminController extends Controller
+{
+
+    public function __construct()
+    {
+        $this->middleware('auth:Admin');
+    }
+
+    public function index()
+    {
+        $admin = Auth::guard('admin')->user();
+        return $admin->name;
+    }
+
+
+    public function indexView(){
+        return view('admin.adminRegister');
+
+    }
+
+
+    public function adminRegisterForm(){
+
+        $listInfo=DB::table('admins')->where(array('email'=>$_POST['email']))->first();
+        $msg=[];
+        if(@$listInfo->email){
+
+            $msg['state']='2';
+            $msg['msg']='邮箱已存在';
+            echo json_encode($msg);
+            exit;
+        }
+        $msgReturn=Admin::create([
+            'name' => $_POST['name'],
+            'email' => $_POST['email'],
+            'password' => bcrypt($_POST['password']),
+        ]);
+        if($msgReturn){
+            $msg['state']='1';
+            $msg['msg']='注册成功';
+            echo json_encode($msg);
+            exit();
+        }else{
+            $msg['state']='0';
+            $msg['msg']='注册失败';
+            echo json_encode($msg);
+            exit();
+        }
+    }
+
+
+
+}
