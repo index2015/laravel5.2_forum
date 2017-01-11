@@ -4,17 +4,17 @@
     <title>@yield('title', "门户社区-首页")</title>
 
     {{--layui组件--}}
-    <script src="{{asset('/public/static/js/jquery-2.2.3.min.js')}}" type="text/javascript"></script>
-    <link rel="stylesheet" href="{{asset('/public/layui/mobile/need/layer.css')}}">
-    <script src="{{asset('/public/layui/layer.js')}}" type="text/javascript"></script>
-    <script src="{{asset('/public/layui/core.js')}}" type="text/javascript"></script>
+    <script src="{{asset('static/js/jquery-2.2.3.min.js')}}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{asset('layui/mobile/need/layer.css')}}">
+    <script src="{{asset('layui/layer.js')}}" type="text/javascript"></script>
+    <script src="{{asset('layui/core.js')}}" type="text/javascript"></script>
 
     {{--end layui组件--}}
-    <link rel="stylesheet" type="text/css" href="{{asset('/public/static/css/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/public/static/css/nanoscroller.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/public/static/css/style_5_common.css?Nnj')}}">
-    <script src="{{asset('/public/static/js/common.js?Nnj')}}" type="text/javascript"></script>
-    <script src="{{asset('/public/static/js/jquery.forum.js?Nnj')}}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('static/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('static/css/nanoscroller.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('static/css/style_5_common.css?Nnj')}}">
+    <script src="{{asset('static/js/common.js?Nnj')}}" type="text/javascript"></script>
+    <script src="{{asset('static/js/jquery.forum.js?Nnj')}}" type="text/javascript"></script>
 
 </head>
 <body id="nv_forum" class="pg_viewthread" style="background: #eaeaea url('{{asset('/static/images/bg.png')}}') repeat-x 0 70px;" onkeydown="if(event.keyCode==27) return false;">
