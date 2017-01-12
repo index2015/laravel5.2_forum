@@ -9,3 +9,4 @@ Homestead.json
 *.log
 *.log
 *.log
+.idea/workspace.xml

@@ -94,8 +94,11 @@ class ForumController extends Controller
      *  会员发布帖子
      */
     public function memberPost(){
+
         $newModel=new Post_data();
-        $return= $newModel->addData($_POST);
+        $data=$_POST;
+        $data['postContent']=$_POST['editorValue'];
+        $return= $newModel->addData($data);
         $msg=[];
         if($return){
             $msg['state']='1';
